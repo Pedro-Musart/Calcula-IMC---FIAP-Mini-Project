@@ -3,8 +3,11 @@
     <string name="app_title">BMI</string>
     <string name="app_subtitle">Calculator</string>
     <string name="login">Login</string>
+    <string name="name">Name</string>
     <string name="email">Enter your Email</string>
     <string name="password">Enter your Password</string>
     <string name="submit">Submit</string>
     <string name="register">Register new user</string>
+    <string name="fiap">FIAP</string>
+
 </resources>
