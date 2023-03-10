@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Calcula IMC</string>
+    <string name="app_name">Calculadora de IMC</string>
     <string name="app_title">IMC</string>
-    <string name="app_subtitle">Calcula</string>
-    <string name="login">Login</string>
-    <string name="email">Insira o seu Email</string>
-    <string name="password">Insira a sua senha</string>
+    <string name="app_subtitle">Calculadora</string>
+    <string name="login">Entrar</string>
+    <string name="name">Nome</string>
+    <string name="email">Digite seu e-mail</string>
+    <string name="password">Digite sua senha</string>
     <string name="submit">Enviar</string>
-    <string name="register">Cadastrar novo usuário</string>
+    <string name="register">Registrar novo usuário</string>
+    <string name="fiap">FIAP</string>
 </resources>
