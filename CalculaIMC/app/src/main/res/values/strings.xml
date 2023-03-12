@@ -5,9 +5,11 @@
     <string name="login">Login</string>
     <string name="name">Name</string>
     <string name="email">Enter your Email</string>
+    <string name="age">Date if Birth</string>
     <string name="password">Enter your Password</string>
     <string name="submit">Submit</string>
-    <string name="register">Register new user</string>
+    <string name="register">Register now</string>
     <string name="fiap">FIAP</string>
+    <string name="alreadyUsing">Already Using? Login Now</string>
 
 </resources>

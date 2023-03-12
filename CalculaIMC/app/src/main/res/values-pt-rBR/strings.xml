@@ -5,9 +5,11 @@
     <string name="app_subtitle">Calculadora</string>
     <string name="login">Entrar</string>
     <string name="name">Nome</string>
-    <string name="email">Digite seu e-mail</string>
-    <string name="password">Digite sua senha</string>
+    <string name="email">Digite seu E-mail</string>
+    <string name="age">Data de Nascimento</string>
+    <string name="password">Digite sua Senha</string>
     <string name="submit">Enviar</string>
-    <string name="register">Registrar novo usuário</string>
+    <string name="register">Registre-se</string>
     <string name="fiap">FIAP</string>
+    <string name="alreadyUsing">Já possui conta? Faça login</string>
 </resources>
