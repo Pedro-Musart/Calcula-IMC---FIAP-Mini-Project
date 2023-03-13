@@ -20,7 +20,7 @@ class ActivityRegister : AppCompatActivity() {
         val btnSubmit = findViewById<Button>(R.id.btnSubmitRegister)
         val loginNowBtn = findViewById<Button>(R.id.btnLogin)
         val txtEmail = findViewById<EditText>(R.id.txtRegisterEmail)
-        val logoBtn = findViewById<Button>(R.id.logo_btn2)
+        val logoBtn = findViewById<Button>(R.id.logo_btn)
         val txtPass = findViewById<EditText>(R.id.txtRegisterPassword)
 
         btnSubmit.setOnClickListener {
