@@ -12,4 +12,7 @@
     <string name="fiap">FIAP</string>
     <string name="alreadyUsing">Already Using? Login Now</string>
 
+    /!--Home--/
+    <string name="letsCalculate"></string>
+
 </resources>

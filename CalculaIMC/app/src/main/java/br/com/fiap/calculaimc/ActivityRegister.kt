@@ -24,15 +24,15 @@ class ActivityRegister : AppCompatActivity() {
         val txtPass = findViewById<EditText>(R.id.txtRegisterPassword)
 
         btnSubmit.setOnClickListener {
-            val nomePersistencia = this.getSharedPreferences("dadosBasicos", Context.MODE_PRIVATE)
+            val dadosBasicosPersistencia = this.getSharedPreferences("dadosBasicos", Context.MODE_PRIVATE)
 
-            val editor = nomePersistencia.edit()
+            val editor = dadosBasicosPersistencia.edit()
 
             editor.putString("nome", txtNome.editableText.toString())
             editor.putString("email", txtEmail.editableText.toString())
             editor.apply()
 
-            val nome = nomePersistencia.getString("nome", "")
+            val nome = dadosBasicosPersistencia.getString("nome", "")
 
             if (txtNome.editableText.toString().isEmpty() || txtEmail.editableText.toString().isEmpty() || txtPass.editableText.toString().isEmpty()){
                 Toast.makeText(this, "Insira todos os Dados", Toast.LENGTH_SHORT).show()
