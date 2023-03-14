@@ -14,6 +14,7 @@ import android.widget.Toast
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
 import java.io.IOException
+import java.nio.charset.Charset
 import java.util.StringTokenizer
 
 class ActivityRegister : AppCompatActivity() {
@@ -40,8 +41,11 @@ class ActivityRegister : AppCompatActivity() {
             startActivity(i)
         }
 
-        btnSubmit.setOnClickListener(View.OnClickListener {
 
+        btnSubmit.setOnClickListener(View.OnClickListener {
+        if (txtEmail.editableText.toString().isEmpty() || txtNome.editableText.toString().isEmpty() || txtPass.editableText.toString().isEmpty()  ){
+            Toast.makeText(this, "Insira todos os Dados", Toast.LENGTH_SHORT).show()
+       }else {
             val data = txtNome.editableText.toString() + ":" + txtEmail.editableText.toString()
             gravaDadoArchive("dadosBasicos", data)
             val dataReturn:String = recuperaDadoArchive("dadosBasicos")
@@ -51,7 +55,8 @@ class ActivityRegister : AppCompatActivity() {
             val email:String = if (tokenizer.hasMoreTokens()) tokenizer.nextToken () else "sem email"
 
 
-            Toast.makeText(this, "Boas vindas $data", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Boas vindas $nome, entre para continuar!", Toast.LENGTH_LONG).show()
+            }
         })
 
 
@@ -81,7 +86,7 @@ class ActivityRegister : AppCompatActivity() {
 
             fi.close()
 
-            return dataReturn.toString()
+            return dataReturn.toString(Charset.defaultCharset())
         }
         catch (e: FileNotFoundException) {
             Log.i("recuperaDadoArchive", "FileNotFoundException")
