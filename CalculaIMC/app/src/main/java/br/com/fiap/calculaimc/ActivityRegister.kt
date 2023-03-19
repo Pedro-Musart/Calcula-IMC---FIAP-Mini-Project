@@ -42,55 +42,10 @@ class ActivityRegister : AppCompatActivity() {
 
         btnSubmit.setOnClickListener(View.OnClickListener {
 
-            val data = txtNome.editableText.toString() + ":" + txtEmail.editableText.toString()
-            gravaDadoArchive("dadosBasicos", data)
-            val dataReturn:String = recuperaDadoArchive("dadosBasicos")
-
-            val tokenizer = StringTokenizer (dataReturn,":")
-            val nome:String = if (tokenizer.hasMoreTokens()) tokenizer.nextToken() else "sem nome"
-            val email:String = if (tokenizer.hasMoreTokens()) tokenizer.nextToken () else "sem email"
-
-
-            Toast.makeText(this, "Boas vindas $data", Toast.LENGTH_LONG).show()
-        })
 
 
     }
 
-    fun gravaDadoArchive(filename: String, data: String){
 
-        try {
-
-            val fs:FileOutputStream = openFileOutput(filename, Context.MODE_PRIVATE)
-            fs.write(data.toByteArray())
-            fs.close()
-
-        } catch (e: FileNotFoundException){
-            Log.i("gravaDadosArchive", "FileNotFoundException")
-        } catch (e: IOException){
-            Log.i("gravaDadoArchive", "IOException")
-        }
-
-    }
-
-    fun recuperaDadoArchive(filename: String) : String {
-
-        try {
-            val fi = openFileInput(filename)
-            val dataReturn:ByteArray = fi.readBytes()
-
-            fi.close()
-
-            return dataReturn.toString()
-        }
-        catch (e: FileNotFoundException) {
-            Log.i("recuperaDadoArchive", "FileNotFoundException")
-            return ""
-        }catch (e: IOException){
-            Log.i("recuperaDadoArchive", "IOException")
-            return ""
-        }
-
-    }
 
 }
