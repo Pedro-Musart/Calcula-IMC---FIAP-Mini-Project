@@ -10,11 +10,10 @@ class DatabaseManager(context:Context, name: String): SQLiteOpenHelper(context, 
 
     override fun onCreate(db: SQLiteDatabase?) {
         val criarTabela:String = "CREATE TABLE tbl_dadosBasicos (" +
-                "id_dadosBasicos INT NOT NULL," +
+                "id_dadosBasicos INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
                 "nome VARCHAR(30)," +
                 "email VARCHAR(50)," +
-                "senha VARCHAR(50)," +
-                "PRIMARY KEY (id_dadosBasicos);"
+                "senha VARCHAR(50));"
 
         db!!.execSQL(criarTabela)
     }
@@ -24,11 +23,10 @@ class DatabaseManager(context:Context, name: String): SQLiteOpenHelper(context, 
         onCreate(db)
     }
 
-    fun cadastro(id: Int, nome: String, email: String, senha: String){
+    fun cadastro(nome: String, email: String, senha: String){
         var db:SQLiteDatabase = this.writableDatabase
 
         var cv = ContentValues()
-        cv.put("id_dadosBasicos", id)
         cv.put("nome", nome)
         cv.put("email",email)
         cv.put("senha", senha)
@@ -41,4 +39,5 @@ class DatabaseManager(context:Context, name: String): SQLiteOpenHelper(context, 
         var cur = db.rawQuery("SELECT nome, email from tbl_dadoBasicos", null)
         return cur
     }
+
 }

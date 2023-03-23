@@ -42,10 +42,14 @@ class ActivityRegister : AppCompatActivity() {
 
         btnSubmit.setOnClickListener(View.OnClickListener {
 
+        val db = DatabaseManager (this, "dadosBasicos")
+            db.cadastro(txtNome.text.toString(),txtEmail.text.toString(),txtPass.text.toString())
 
 
-    }
+            Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
+    })
 
 
 
+}
 }
