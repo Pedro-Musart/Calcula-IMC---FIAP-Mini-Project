@@ -42,7 +42,7 @@ class ActivityRegister : AppCompatActivity() {
 
         btnSubmit.setOnClickListener(View.OnClickListener {
 
-        val db = DatabaseManager (this, "dadosBasicos")
+        val db = DatabaseManager (this, "tbl_dadosBasicos")
             db.cadastro(txtNome.text.toString(),txtEmail.text.toString(),txtPass.text.toString())
 
 
