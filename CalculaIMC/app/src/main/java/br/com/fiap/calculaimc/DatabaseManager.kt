@@ -6,7 +6,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class DatabaseManager(context:Context, name: String): SQLiteOpenHelper(context, "", null, 1) {
+class DatabaseManager(context:Context,name: String): SQLiteOpenHelper(context, name, null, 3) {
 
     override fun onCreate(db: SQLiteDatabase?) {
         val criarTabela:String = "CREATE TABLE tbl_dadosBasicos (" +
@@ -25,19 +25,17 @@ class DatabaseManager(context:Context, name: String): SQLiteOpenHelper(context, 
 
     fun cadastro(nome: String, email: String, senha: String){
         var db:SQLiteDatabase = this.writableDatabase
-
         var cv = ContentValues()
         cv.put("nome", nome)
         cv.put("email",email)
-        cv.put("senha", senha)
+        cv.put("senha",senha)
 
         db.insert("tbl_dadosBasicos","id_dadosBasicos", cv)
     }
 
-    fun listaDadosBasicos() : Cursor {
-        var db:SQLiteDatabase = this.readableDatabase
-        var cur = db.rawQuery("SELECT nome, email from tbl_dadoBasicos", null)
-        return cur
+    fun listaDadosBasicos(): Cursor {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT nome, email FROM tbl_dadosBasicos", null)
+        return cursor
     }
-
 }

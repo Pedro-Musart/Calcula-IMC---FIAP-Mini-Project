@@ -13,6 +13,8 @@
     <string name="alreadyUsing">Already Using? Login Now</string>
 
     /!--Home--/
-    <string name="letsCalculate"></string>
+    <string name="letsCalculate">Let\'s calculate your Body Mass Index now?</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
 
 </resources>

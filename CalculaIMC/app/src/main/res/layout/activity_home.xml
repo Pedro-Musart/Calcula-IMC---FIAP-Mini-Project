@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home_background"
+    android:background="#1C1C1C"
+    android:backgroundTint="#1C1C1C"
     android:padding="18dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,9 +33,9 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
             android:text="@string/app_subtitle"
             android:textColor="#FFFFFF"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/imc"
             app:layout_constraintTop_toBottomOf="@+id/imc" />
 
@@ -42,8 +44,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NameSharedPreferences"
-            android:textSize="24sp"
             android:textColor="#FFFFFF"
+            android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,19 +54,118 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="EmailSharedPreferences"
-            android:textSize="16sp"
             android:textColor="#FFFFFF"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txvUserName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="260dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtLetsCalculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/letsCalculate"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pink_bg"
+            android:padding="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.057"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/txtPeso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/weight"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/editTextPeso"
+                app:layout_constraintStart_toStartOf="@+id/editTextPeso" />
+
+            <EditText
+                android:id="@+id/editTextPeso"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:autofillHints="emailAdress"
+                android:background="@drawable/shape"
+                android:backgroundTint="#FFFFFF"
+                android:drawablePadding="8dp"
+                android:drawableTint="#E70950"
+                android:ems="10"
+                android:inputType="number"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="10dp"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textColorHint="#909090"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPeso" />
+
+
+            <TextView
+                android:id="@+id/txtAltura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/height"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/editTextPeso"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPeso" />
+
+            <EditText
+                android:id="@+id/editTextAltura"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+
+                android:autofillHints="emailAdress"
+                android:background="@drawable/shape"
+                android:backgroundTint="#FFFFFF"
+                android:drawablePadding="8dp"
+                android:drawableTint="#E70950"
+                android:ems="10"
+                android:inputType="number"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="10dp"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textColorHint="#909090"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAltura" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

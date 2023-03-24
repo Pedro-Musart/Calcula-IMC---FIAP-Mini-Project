@@ -12,4 +12,9 @@
     <string name="register">Registre-se</string>
     <string name="fiap">FIAP</string>
     <string name="alreadyUsing">Já possui conta? Faça login</string>
+
+    /!--Home--/
+    <string name="letsCalculate">Vamos calcular o seu Índice de Massa Corporal agora?</string>
+    <string name="weight">Peso</string>
+    <string name="height">ALtura</string>
 </resources>
