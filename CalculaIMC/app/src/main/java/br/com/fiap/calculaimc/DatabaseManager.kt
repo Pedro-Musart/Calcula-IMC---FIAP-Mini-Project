@@ -33,9 +33,26 @@ class DatabaseManager(context:Context,name: String): SQLiteOpenHelper(context, n
         db.insert("tbl_dadosBasicos","id_dadosBasicos", cv)
     }
 
-    fun listaDadosBasicos(): Cursor {
+    fun listaDadosBasicos(id: Long): Cursor {
         val db = this.readableDatabase
-        val cursor = db.rawQuery("SELECT nome, email FROM tbl_dadosBasicos", null)
-        return cursor
+        return db.rawQuery(
+            "SELECT nome, email FROM tbl_dadosBasicos WHERE id_dadosBasicos = ?",
+            arrayOf(id.toString())
+        )
     }
+
+    fun login(email: String, password: String): Pair<Boolean, Long?> {
+        val db = this.readableDatabase
+        val query = "SELECT id_dadosBasicos FROM tbl_dadosBasicos WHERE email = ? AND senha = ?"
+        val cursor = db.rawQuery(query, arrayOf(email, password))
+        val idIndex = cursor.getColumnIndex("id_dadosBasicos")
+        val id = if (idIndex >= 0 && cursor.moveToFirst()) {
+            cursor.getLong(idIndex)
+        } else null
+        cursor.close()
+        db.close()
+        return Pair(id != null, id)
+    }
+
+
 }

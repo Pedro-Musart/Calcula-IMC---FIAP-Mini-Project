@@ -67,21 +67,23 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.527">
 
         <TextView
             android:id="@+id/txtLetsCalculate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
             android:text="@string/letsCalculate"
             android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:layout_marginBottom="32dp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout4"
@@ -92,8 +94,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.057"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="parent">
 
 
             <TextView
@@ -103,8 +104,8 @@
                 android:text="@string/weight"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/editTextPeso"
-                app:layout_constraintStart_toStartOf="@+id/editTextPeso" />
+                app:layout_constraintStart_toStartOf="@+id/editTextPeso"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/editTextPeso"
@@ -162,6 +163,17 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtAltura" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/black_bg"
+                android:padding="16dp"
+                android:text="@string/calculate"
+                app:layout_constraintEnd_toEndOf="@+id/editTextAltura"
+                app:layout_constraintTop_toBottomOf="@+id/editTextAltura" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
